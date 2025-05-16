@@ -26,10 +26,13 @@ export class ResumeService {
         return this.prisma.resume.create({
             data: {
                 ...data,
-                userId,
+                user: {
+                    connect: { id: userId },
+                },
             },
         });
     }
+
 
     async update(id: string, data: any, userId: string) {
         const resume = await this.prisma.resume.findUnique({ where: { id } });

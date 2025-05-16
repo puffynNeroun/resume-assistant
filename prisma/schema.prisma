@@ -34,11 +34,14 @@ model Resume {
   location String?
   summary  String?
 
-  experience Json? // массив объектов опыта
-  education  Json? // массив объектов образования
+  experience Json?
+  education  Json?
   skills     String?
-  languages  Json? // массив языков (или строка, если проще)
-  template   String? // название шаблона
+  languages  Json?
+  template   String?
+
+  rawPrompt  String? // <-- добавили
+  rawContent String? // <-- добавили
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

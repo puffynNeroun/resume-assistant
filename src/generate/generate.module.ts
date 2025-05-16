@@ -8,5 +8,6 @@ import { HttpModule } from '@nestjs/axios';
     imports: [HttpModule],
     controllers: [GenerateController],
     providers: [GenerateService, PrismaService],
+    exports: [GenerateService],
 })
 export class GenerateModule {}
